@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quizzes",
+  "info": {
+    "name": "quiz",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "default": "pon_un_nombre"
+    },
+    "canvasFormat": {
+      "type": "enumeration",
+      "enum": ["png", "jpg", "gif"],
+      "default": "png"
+    },
+    "active": {
+      "type": "boolean",
+      "default": false
+    },
+    "canvasWidth": {
+      "type": "integer"
+    },
+    "canvasHeight": {
+      "type": "integer"
+    },
+    "popularity": {
+      "type": "integer"
+    },
+    "unisex": {
+      "type": "boolean",
+      "default": false
+    },
+    "categories": {
+      "collection": "category",
+      "via": "quizzes"
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": ["images"],
+      "plugin": "upload",
+      "required": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    }
+  }
+}

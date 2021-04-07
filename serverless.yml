@@ -1,0 +1,47 @@
+service: sls-strapi
+provider:
+  name: aws
+  runtime: nodejs12.x
+  logRetentionInDays: ${self:custom.vars.logRetentionInDays, 1}
+
+  environment:
+    ADMIN_JWT_SECRET: "Just using dummy"
+    DATABASE_URL: ${env:DATABASE_URL}
+    ALGOLIA_KEY: ${env:ALGOLIA_KEY}
+    AWS_ACCESS_KEY_ID: "my key"
+    AWS_SECRET_ACCESS_KEY: "my key"
+
+package:
+  exclude:
+    - ./**
+  include:
+    - node_modules/**
+    - api/**
+    - config/**
+    - extensions/**
+    - plugins/**
+    - package.json
+    - handlers/graphql.js
+
+functions:
+  api:
+    name: dev-auto-finance-api
+    handler: graphql.handler
+    #memorySize: 1024
+    timeout: 120
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{any+}
+          method: ANY
+          cors: true
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    port: 15001
