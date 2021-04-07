@@ -16,11 +16,12 @@ package:
     - ./**
   include:
     - api/**
+    - middlewares/**
     - config/**
     - extensions/**
     - plugins/**
     - package.json
-    - handlers/graphql.js
+    - graphql.js
 
 functions:
   api:
