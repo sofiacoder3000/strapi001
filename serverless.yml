@@ -5,11 +5,11 @@ provider:
   logRetentionInDays: ${self:custom.vars.logRetentionInDays, 1}
 
   environment:
-    ADMIN_JWT_SECRET: "Just using dummy"
+    ADMIN_JWT_SECRET: ${env:ADMIN_JWT_SECRET}
     DATABASE_URL: ${env:DATABASE_URL}
     ALGOLIA_KEY: ${env:ALGOLIA_KEY}
-    AWS_ACCESS_KEY_ID: "my key"
-    AWS_SECRET_ACCESS_KEY: "my key"
+    #AWS_ACCESS_KEY_ID: "my key"
+    #AWS_SECRET_ACCESS_KEY: "my key"
 
 package:
   exclude:
