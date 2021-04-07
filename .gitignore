@@ -117,4 +117,5 @@ build
 ############################
 # Privacy
 ############################
+.serverless/*
 serverless.dev.yml
