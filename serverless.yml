@@ -15,7 +15,6 @@ package:
   exclude:
     - ./**
   include:
-    - node_modules/**
     - api/**
     - config/**
     - extensions/**

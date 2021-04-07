@@ -9,7 +9,7 @@
     "build": "strapi build",
     "strapi": "strapi",
     "strapiadmin": "strapi develop --watch-admin",
-    "serverless": "sls offline"
+    "serverless": "serverless offline --config serverless.dev.yml"
   },
   "devDependencies": {
     "serverless-offline": "^6.9.0"
