@@ -12,16 +12,18 @@ provider:
     #AWS_SECRET_ACCESS_KEY: "my key"
 
 package:
-  exclude:
-    - ./**
+  #exclude:
+  #  - ./**
   include:
     - api/**
-    - middlewares/**
     - config/**
+    - exports/**
+    - middlewares/**
     - extensions/**
     - plugins/**
     - package.json
     - graphql.js
+    - .strapi-updater.json
 
 functions:
   api:
@@ -44,4 +46,4 @@ plugins:
 
 custom:
   serverless-offline:
-    port: 15001
+    port: 15002
