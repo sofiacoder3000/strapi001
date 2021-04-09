@@ -2,7 +2,6 @@ module.exports = ({ env }) => {
   return {
     settings: {
       // ...
-      /*
       algolia: {
         enabled: true,
         applicationId: "T4QNOIQRQ6",
@@ -11,7 +10,6 @@ module.exports = ({ env }) => {
         prefix: "sofia", // default: Strapi environment (strapi.config.environment)
         timeout: 3000,
       },
-      */
     },
   };
 };

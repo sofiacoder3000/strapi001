@@ -3,27 +3,31 @@ provider:
   name: aws
   runtime: nodejs12.x
   logRetentionInDays: ${self:custom.vars.logRetentionInDays, 1}
-
+  lambdaHashingVersion: "20201221"
   environment:
     ADMIN_JWT_SECRET: ${env:ADMIN_JWT_SECRET}
     DATABASE_URL: ${env:DATABASE_URL}
-    ALGOLIA_KEY: ${env:ALGOLIA_KEY}
+    ALGOLIA_KEY: ${self:custom.algolia-key}
     #AWS_ACCESS_KEY_ID: "my key"
     #AWS_SECRET_ACCESS_KEY: "my key"
 
 package:
-  #exclude:
-  #  - ./**
-  include:
+  patterns:
+    - "!node_modules/**"
+    - "node_modules/strapi-hook-algolia/**"
+    - "node_modules/strapi-plugin-graphql/**"
+    - "!tmp/**"
+    - "!.cache/**"
+    - "!.git/**"
+    - "!build/**"
     - api/**
     - config/**
     - exports/**
-    - middlewares/**
     - extensions/**
+    - graphql.js
+    - middlewares/**
     - plugins/**
     - package.json
-    - graphql.js
-    - .strapi-updater.json
 
 functions:
   api:
@@ -47,3 +51,4 @@ plugins:
 custom:
   serverless-offline:
     port: 15002
+  algolia-key: ${env:ALGOLIA_KEY, ''}
