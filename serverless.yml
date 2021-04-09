@@ -13,7 +13,7 @@ provider:
 
 package:
   patterns:
-    - "node_modules/**"
+    - "!node_modules/**"
     #- "node_modules/strapi-hook-algolia/**"
     #- "node_modules/strapi-plugin-graphql/**"
     - "!tmp/**"
