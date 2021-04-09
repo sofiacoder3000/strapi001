@@ -19,6 +19,8 @@ package:
     - "!tmp/**"
     - "!.cache/**"
     - "!.git/**"
+    - "!build/**"
+    - "!public/uploads/**"
     - api/**
     - config/**
     - exports/**

@@ -11,8 +11,9 @@
     "yarnb": "IS_OFFLINE=true yarn build2",
     "strapi": "strapi",
     "strapiadmin": "strapi develop --watch-admin",
-    "serverless": "serverless offline --config serverless.dev.yml",
-    "serverbose": "sls deploy --verbose --config serverless.dev.yml"
+    "slsoffline": "serverless offline --config serverless.dev.yml",
+    "slsverbose": "sls deploy --verbose --config serverless.dev.yml",
+    "front": "serve build/"
   },
   "devDependencies": {
     "serverless-offline": "^6.9.0"
