@@ -13,18 +13,17 @@ provider:
 
 package:
   patterns:
-    - "!node_modules/**"
-    - "node_modules/strapi-hook-algolia/**"
-    - "node_modules/strapi-plugin-graphql/**"
+    - "node_modules/**"
+    #- "node_modules/strapi-hook-algolia/**"
+    #- "node_modules/strapi-plugin-graphql/**"
     - "!tmp/**"
     - "!.cache/**"
     - "!.git/**"
-    - "!build/**"
     - api/**
     - config/**
     - exports/**
     - extensions/**
-    - graphql.js
+    - app-graphql.js
     - middlewares/**
     - plugins/**
     - package.json
@@ -32,7 +31,7 @@ package:
 functions:
   api:
     name: dev-auto-finance-api
-    handler: graphql.handler
+    handler: app-graphql.handler
     #memorySize: 1024
     timeout: 120
     events:

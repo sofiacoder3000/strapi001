@@ -4,6 +4,9 @@ module.exports = {
     cors: {
       origin: [
         "http://localhost:1347",
+        "http://localhost:3000",
+        "http://localhost:5000",
+        "https://b7j8wdtnt4.execute-api.us-east-1.amazonaws.com/dev",
         "https://mysite.com",
         "https://www.mysite.com",
       ],

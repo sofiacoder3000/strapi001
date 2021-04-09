@@ -7,9 +7,12 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
+    "build2": "strapi build && ./scripts/post-build.sh",
+    "yarnb": "IS_OFFLINE=true yarn build2",
     "strapi": "strapi",
     "strapiadmin": "strapi develop --watch-admin",
-    "serverless": "serverless offline --config serverless.dev.yml"
+    "serverless": "serverless offline --config serverless.dev.yml",
+    "serverbose": "sls deploy --verbose --config serverless.dev.yml"
   },
   "devDependencies": {
     "serverless-offline": "^6.9.0"
@@ -30,6 +33,9 @@
     "strapi-plugin-upload": "3.5.4",
     "strapi-plugin-users-permissions": "3.5.4",
     "strapi-utils": "3.5.4"
+  },
+  "resolutions": {
+    "graphql": "15.5.0"
   },
   "author": {
     "name": "A Strapi developer"
